@@ -1,0 +1,11 @@
+﻿{
+  "name": "anglo-calendar",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Static ACNA BCP 2019 Daily Office calendar and ICS feed generator",
+  "type": "module",
+  "scripts": {
+    "build-calendar": "node scripts/build-calendar.mjs",
+    "build": "npm run build-calendar"
+  }
+}

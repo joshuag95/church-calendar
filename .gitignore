@@ -1,0 +1,4 @@
+node_modules/
+.DS_Store
+_upstream_*.js
+_upstream_*.html
