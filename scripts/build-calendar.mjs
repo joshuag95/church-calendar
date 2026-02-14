@@ -372,6 +372,18 @@ async function generateLandingPage(filePath, siteUrl, calendar) {
       border-radius: 8px;
       padding: 0.85rem;
     }
+    .links {
+      margin-top: 0.95rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      font-size: 0.95rem;
+    }
+    .links a {
+      color: #0f5b3c;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 2px;
+    }
     @media (max-width: 600px) {
       .hero h1 { font-size: 1.7rem; }
     }
@@ -399,6 +411,7 @@ async function generateLandingPage(filePath, siteUrl, calendar) {
           <li>Morning Prayer Psalms, OT, NT</li>
           <li>Evening Prayer Psalms, OT, NT</li>
         </ul>
+        <p class="muted">This is a read-only reference calendar designed for prayer planning and quick daily lookup.</p>
       </article>
 
       <article class="card">
@@ -406,6 +419,7 @@ async function generateLandingPage(filePath, siteUrl, calendar) {
         <p><strong>Google Calendar:</strong> use the button above.</p>
         <p><strong>Apple Calendar / Outlook:</strong> subscribe by URL using:</p>
         <code>${escapeHtml(icsUrl)}</code>
+        <p class="muted">Subscription means updates are delivered automatically when this site is rebuilt.</p>
       </article>
 
       <article class="card">
@@ -417,6 +431,15 @@ async function generateLandingPage(filePath, siteUrl, calendar) {
         </ul>
         <p class="muted">Example day page:</p>
         <p><a href="${escapeHtml(exampleDayUrl)}">${escapeHtml(exampleDayUrl)}</a></p>
+      </article>
+
+      <article class="card">
+        <h2>About ACNA &amp; the BCP 2019</h2>
+        <p>The readings and liturgical names are generated to support use of the ACNA Book of Common Prayer 2019 Daily Office tradition.</p>
+        <div class="links">
+          <a href="https://anglicanchurch.net/" target="_blank" rel="noopener">ACNA Official Website</a>
+          <a href="https://bcp2019.anglicanchurch.net/" target="_blank" rel="noopener">BCP 2019 Online</a>
+        </div>
       </article>
     </section>
 
