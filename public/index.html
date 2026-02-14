@@ -5,27 +5,148 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>ACNA BCP 2019 Daily Office Calendar</title>
   <style>
-    :root { color-scheme: light; }
-    body { font-family: Georgia, serif; margin: 2rem auto; max-width: 760px; padding: 0 1rem; line-height: 1.5; color: #1f2937; }
-    h1 { margin-bottom: 0.5rem; }
-    .button { display: inline-block; background: #1d4ed8; color: white; text-decoration: none; padding: 0.7rem 1rem; border-radius: 6px; font-weight: 600; }
-    code { background: #f3f4f6; padding: 0.15rem 0.35rem; border-radius: 4px; }
-    .box { background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 8px; padding: 1rem; margin-top: 1rem; }
+    :root {
+      color-scheme: light;
+      --bg: #f6f7f4;
+      --card: #ffffff;
+      --ink: #1f2a21;
+      --muted: #546356;
+      --brand: #1f6d4b;
+      --brand-dark: #165239;
+      --line: #d7ddd6;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Georgia", "Times New Roman", serif;
+      color: var(--ink);
+      background: radial-gradient(circle at top right, #ebefe8 0%, var(--bg) 45%);
+      line-height: 1.55;
+    }
+    .wrap {
+      max-width: 940px;
+      margin: 0 auto;
+      padding: 2rem 1rem 3rem;
+    }
+    .hero {
+      background: linear-gradient(135deg, #20412f 0%, #1f6d4b 55%, #5f8f78 100%);
+      color: #f2f8f3;
+      border-radius: 14px;
+      padding: 1.6rem;
+      box-shadow: 0 12px 30px rgba(17, 32, 23, 0.16);
+    }
+    .hero h1 { margin: 0 0 0.55rem; font-size: 2rem; line-height: 1.2; }
+    .hero p { margin: 0.3rem 0; color: #e8f3eb; }
+    .hero .coverage { margin-top: 0.8rem; font-size: 0.98rem; color: #d8eadf; }
+    .cta-row {
+      margin-top: 1rem;
+      display: flex;
+      gap: 0.65rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .button {
+      display: inline-block;
+      background: #fff;
+      color: var(--brand-dark);
+      text-decoration: none;
+      padding: 0.7rem 1rem;
+      border-radius: 8px;
+      font-weight: 700;
+      border: 1px solid rgba(255, 255, 255, 0.75);
+    }
+    .button:hover { background: #f2faf5; }
+    .button.secondary {
+      background: transparent;
+      color: #f2f8f3;
+      border: 1px solid rgba(242, 248, 243, 0.7);
+    }
+    .grid {
+      margin-top: 1rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 0.9rem;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 1rem;
+    }
+    h2 { margin: 0 0 0.55rem; font-size: 1.12rem; }
+    p { margin: 0.35rem 0; }
+    ul { margin: 0.45rem 0 0.2rem 1.05rem; padding: 0; }
+    li { margin: 0.3rem 0; }
+    code {
+      display: block;
+      margin-top: 0.45rem;
+      background: #f2f5f1;
+      border: 1px solid #dde5dd;
+      border-radius: 7px;
+      padding: 0.55rem;
+      overflow-wrap: anywhere;
+      font-family: Consolas, "Courier New", monospace;
+      font-size: 0.9rem;
+    }
+    .muted { color: var(--muted); }
+    .tips {
+      margin-top: 0.9rem;
+      background: #eef4ef;
+      border-left: 4px solid var(--brand);
+      border-radius: 8px;
+      padding: 0.85rem;
+    }
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 1.7rem; }
+    }
   </style>
 </head>
 <body>
-  <h1>ACNA BCP 2019 Daily Office Calendar</h1>
-  <p>Subscribe to a generated iCalendar feed with one all-day event per date, including liturgical day names and Daily Office readings.</p>
-  <p>Coverage: <strong>2026-01-01</strong> through <strong>2028-12-31</strong></p>
+  <main class="wrap">
+    <section class="hero">
+      <h1>ACNA BCP 2019 Daily Office Calendar</h1>
+      <p>A subscribe-able calendar feed for the Anglican Church in North America's Book of Common Prayer 2019.</p>
+      <p>Each day includes the liturgical day name plus Morning Prayer and Evening Prayer readings.</p>
+      <p class="coverage">Coverage: <strong>2026-01-01</strong> through <strong>2028-12-31</strong></p>
+      <div class="cta-row">
+        <a class="button" href="https://calendar.google.com/calendar/r?cid=https%3A%2F%2Fchurch-calendar.pages.dev%2Facna-bcp2019.ics">Add to Google Calendar</a>
+        <a class="button secondary" href="https://church-calendar.pages.dev/acna-bcp2019.ics">Open ICS Feed</a>
+      </div>
+    </section>
 
-  <p><a class="button" href="https://calendar.google.com/calendar/r?cid=https%3A%2F%2Fchurch-calendar.pages.dev%2Facna-bcp2019.ics">Add to Google Calendar</a></p>
+    <section class="grid">
+      <article class="card">
+        <h2>What This Calendar Is</h2>
+        <p>One all-day event for every date in the generated range. Each event contains:</p>
+        <ul>
+          <li>Liturgical day name</li>
+          <li>Morning Prayer Psalms, OT, NT</li>
+          <li>Evening Prayer Psalms, OT, NT</li>
+        </ul>
+      </article>
 
-  <div class="box">
-    <p><strong>Raw ICS URL (Apple Calendar / Outlook):</strong></p>
-    <p><code>https://church-calendar.pages.dev/acna-bcp2019.ics</code></p>
-    <p>If your calendar app asks for a URL subscription, paste the raw ICS URL above.</p>
-  </div>
+      <article class="card">
+        <h2>How To Subscribe</h2>
+        <p><strong>Google Calendar:</strong> use the button above.</p>
+        <p><strong>Apple Calendar / Outlook:</strong> subscribe by URL using:</p>
+        <code>https://church-calendar.pages.dev/acna-bcp2019.ics</code>
+      </article>
 
-  <p>Example day page: <a href="https://church-calendar.pages.dev/day/2026-01-01/">https://church-calendar.pages.dev/day/2026-01-01/</a></p>
+      <article class="card">
+        <h2>How To Use It</h2>
+        <ul>
+          <li>Open today in your calendar app.</li>
+          <li>Read the event description for Daily Office references.</li>
+          <li>Tap the event URL to view a clean day page in browser.</li>
+        </ul>
+        <p class="muted">Example day page:</p>
+        <p><a href="https://church-calendar.pages.dev/day/2026-01-01/">https://church-calendar.pages.dev/day/2026-01-01/</a></p>
+      </article>
+    </section>
+
+    <section class="tips">
+      <p><strong>Tip:</strong> this feed is read-only and updates when the site is rebuilt and redeployed.</p>
+    </section>
+  </main>
 </body>
 </html>
