@@ -271,7 +271,8 @@ async function generateLandingPage(filePath, siteUrl, calendar) {
   const first = calendar[0]?.date || "";
   const last = calendar[calendar.length - 1]?.date || "";
   const icsUrl = `${siteUrl}/acna-bcp2019.ics`;
-  const googleUrl = `https://calendar.google.com/calendar/r?cid=${encodeURIComponent(icsUrl)}`;
+  const webcalUrl = icsUrl.replace(/^https?:\/\//, "webcal://");
+  const googleUrl = `https://calendar.google.com/calendar/u/0/r/settings/addbyurl?cid=${encodeURIComponent(webcalUrl)}`;
   const exampleDayUrl = `${siteUrl}/day/${first}/`;
 
   const html = `<!doctype html>
@@ -416,7 +417,7 @@ async function generateLandingPage(filePath, siteUrl, calendar) {
 
       <article class="card">
         <h2>How To Subscribe</h2>
-        <p><strong>Google Calendar:</strong> use the button above.</p>
+        <p><strong>Google Calendar:</strong> use the button above and confirm the add-by-URL screen.</p>
         <p><strong>Apple Calendar / Outlook:</strong> subscribe by URL using:</p>
         <code>${escapeHtml(icsUrl)}</code>
         <p class="muted">Subscription means updates are delivered automatically when this site is rebuilt.</p>
